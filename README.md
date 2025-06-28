@@ -1,9 +1,9 @@
-# UFO-3: Unsupervised Fiber Orientation 3-Compartment Model
+# UFO-3: Unsupervised Three-Compartment Learning for Fiber Orientation Distribution Function Estimation
 
 📄 **Accepted at MICCAI 2025**  
 🧠 *A fully unsupervised learning framework for estimating fiber orientation distribution function (FOD) using only diffusion MRI data.*
 
-This repository contains the official PyTorch implementation of our MICCAI 2025 paper:
+This repository contains the official PyTorch implementation of [**our MICCAI 2025 paper**](https://github.com/tensor2023/xueqinggao.github.io/blob/main/UFO-3_Paper.pdf).
 
 ### ✍️ Authors
 **Xueqing Gao**<sup>†</sup> &nbsp;&nbsp;|&nbsp;&nbsp; **Rizhong Lin**<sup>†</sup> &nbsp;&nbsp;|&nbsp;&nbsp; **Jianhui Feng**  
