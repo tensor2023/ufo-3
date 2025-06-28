@@ -1,0 +1,71 @@
+name : '0224_ismrmbasice4po258'
+middle_voxel: False
+constrain_points : 258
+batch_size: 16
+lr: 0.0017
+n_epoch: 50
+dataset_mode : chcp
+filter_start: 1
+sh_degree: 8
+kernel_sizeSph: 5  
+kernel_sizeSpa: 3
+depth: 2
+n_side: 16  # 2:48, 4:192
+normalize: True
+size_3d_patch : 3
+graph_sampling: 'healpix'  
+conv_name: 'mixed'
+anisoSpa: False  
+concatenate: False  
+bs : 2
+
+save_every: 1
+loss_intensity: 'L2'
+intensity_weight: 1.0
+loss_sparsity: 'cauchy'
+sigma_sparsity: 1.0e-05
+sparsity_weight: 1.0e-06
+loss_non_negativity: 'L2'
+nn_fodf_weight: 1.0
+pve_weight: 1.0e-4
+
+load_state: ''  
+rf_name: '/path/to/rf_algo'  
+wm: True
+gm: True
+csf: True  
+
+project: 'default'
+
+optimizer:    # optimizer used to optimize the loss function
+  type: Adam
+  momentum : 0.9
+  weight_decay : 1.0e-4
+  warmup_steps: 50
+  weight_decay_l1 : 0
+
+num_threads: 2
+patience : 5
+val_iters: 10
+
+suffix: bothwmgm
+
+shuffle: true
+save_dir : '/home/xqgao/D/xuedwi2fod_e3so3bigdata/experiments'
+train_params:
+  featrues_CHCP : 46 
+  featrues_HCP : 30
+  train_txtfile: '/home/xqgao/D/xuedwi2fod_e3so3bigdata/data/ismrmgt.txt'
+  val_txtfile: '/home/xqgao/D/xuedwi2fod_e3so3bigdata/data/ismrmgt.txt'
+  pretrained_model: ''
+  # pretrained_affine_model: '/ifs/loni/faculty/shi/spectrum/yqiao/AI/Disco/experiments/DiscoAffineDense-20221115-002735/affine_level_1_epoch0050.pt'
+  cut_off_scans: ''     # this option used for debuging only
+  base_n_filter : 32
+  val_batch_size: 1
+  initial_epoch: 0      # initial epoch
+  n_affine_epochs: 2          # number of epochs used in training affine registration
+  n_dense_epochs: 200          # number of epochs used in training dense registration
+  patch_per_step: 500 #
+  outchannel : 45
+  max_order : 8
+
