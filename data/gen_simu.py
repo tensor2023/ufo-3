@@ -239,8 +239,8 @@ if __name__ == '__main__':
     lambda2 = torch.tensor(0.0).to(device)  
    
     #random.seed(42)
-    real_dmri_path = "/home/xqgao/data/HCP/100206/100206_dti_B0.nii.gz"
-    tis_data_path= '/home/xqgao/data/HCP/100206/TissueMap.nii.gz'
+    real_dmri_path = "./data/HCP/100206/100206_dti_B0.nii.gz"
+    tis_data_path= './data/HCP/100206/TissueMap.nii.gz'
     
     real_dmri0 = nib.load(real_dmri_path)
     real_dmri=real_dmri0.get_fdata().astype(np.float32)  
@@ -248,9 +248,9 @@ if __name__ == '__main__':
     tis_dmri = torch.from_numpy(nib.load(tis_data_path).get_fdata().astype(np.float32)[:,:,start_slice:end_slice]).to('cuda')
 
     lambda1 = torch.tensor(np.random.uniform(land1, land2,size=real_dmri.shape[:3])).to(device)
-    simulated_dmri_path = os.path.join('/home/xqgao/data/Simulation/100206',f'tis_l{int(land1*10000)}l{int(land2*10000)}i{int(iso1*10000)}i{int(iso2*10000)}.nii.gz')
-    train_list = '/home/xqgao/Tools/Gen/gen_simu/HCP_simu.txt'
-    save_dir = '/home/xqgao/data/Simulation/'
+    simulated_dmri_path = os.path.join('./data/Simulation/100206',f'tis_l{int(land1*10000)}l{int(land2*10000)}i{int(iso1*10000)}i{int(iso2*10000)}.nii.gz')
+    train_list = './Tools/Gen/gen_simu/HCP_simu.txt'
+    save_dir = './data/Simulation/'
     os.makedirs(save_dir, exist_ok=True)
     train_vol_names = np.loadtxt(train_list, dtype=str, ndmin=1)
     config_options = [
@@ -266,7 +266,7 @@ if __name__ == '__main__':
         first_path = parts[0]
         subject_id = first_path.split('/')[5]
         subject_list.append(subject_id)
-        fod_name='/home/xqgao/data/HCP/100206/100206_FOD_WholeVolume.nii.gz'#os.path.join(subject_save_dir, f"{subject_id}_simu_fod_
+        fod_name='./data/HCP/100206/100206_FOD_WholeVolume.nii.gz'#os.path.join(subject_save_dir, f"{subject_id}_simu_fod_
         fod_coeffs=nib.load(fod_name).get_fdata(dtype=np.float32)[:,:,start_slice:end_slice]
         fod=fod_coeffs.copy()
         if subject_id=='100206':
@@ -322,7 +322,7 @@ if __name__ == '__main__':
             
         print("All subject volumes have been generated and saved.")
 
-    gradient_table_path = "/home/xqgao/data/HCP/100206/GradientTable.txt"
+    gradient_table_path = "./data/HCP/100206/GradientTable.txt"
     simulated_dmri = x_reconstructed_np
 
     

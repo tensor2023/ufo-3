@@ -51,12 +51,12 @@ val_iters: 10
 suffix: bothwmgm
 
 shuffle: true
-save_dir : '/home/xqgao/D/xuedwi2fod_e3so3bigdata/experiments'
+save_dir : './D/xuedwi2fod_e3so3bigdata/experiments'
 train_params:
   featrues_CHCP : 46 
   featrues_HCP : 30
-  train_txtfile: '/home/xqgao/D/xuedwi2fod_e3so3bigdata/data/ismrmgt.txt'
-  val_txtfile: '/home/xqgao/D/xuedwi2fod_e3so3bigdata/data/ismrmgt.txt'
+  train_txtfile: './D/xuedwi2fod_e3so3bigdata/data/ismrmgt.txt'
+  val_txtfile: './D/xuedwi2fod_e3so3bigdata/data/ismrmgt.txt'
   pretrained_model: ''
   # pretrained_affine_model: '/ifs/loni/faculty/shi/spectrum/yqiao/AI/Disco/experiments/DiscoAffineDense-20221115-002735/affine_level_1_epoch0050.pt'
   cut_off_scans: ''     # this option used for debuging only

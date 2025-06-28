@@ -1,6 +1,6 @@
-data_path: '/home/xqgao/data/ISMRM2015/ISMRM_2015_Tracto_challenge_ground_truth_dwi_v2'
+data_path: './data/ISMRM2015/ISMRM_2015_Tracto_challenge_ground_truth_dwi_v2'
 
-model_path : '/home/xqgao/D/xuedwi2fod_e3so3bigdata/experiments/0224_ismrmgte4po100/final_model_1_epoch0200_step0062.pt'
+model_path : './D/xuedwi2fod_e3so3bigdata/experiments/0224_ismrmgte4po100/final_model_1_epoch0200_step0062.pt'
 
 output_name: '0228_flipy_ismrmgte4po100.nii.gz'
 epoch: 50  
@@ -15,15 +15,15 @@ input: #/public/home2/yqiao_group/yqiao/CHCP/processed/3025/T1w/3025/Diffusion
   y_start: 40
   z_start: 40
   mask_roi : 0
-  ROI_path: '/home/xqgao/data/CHCP/3025/ConnectomeAnalysis/MCP_Mask.nii.gz' 
-  dwi_path: '/home/xqgao/data/ISMRM2015/ISMRM_2015_Tracto_challenge_ground_truth_dwi_v2/dti_B0.nii.gz'
-  fod_path: '/home/xqgao/data/CHCP/FOD/3025/3025_GT_CSTR.nii.gz'
-  mask_path: '/home/xqgao/data/ISMRM2015/ISMRM_2015_Tracto_challenge_ground_truth_dwi_v2/mask.nii.gz'
-  Gradtable_path: '/home/xqgao/data/ISMRM2015/ISMRM_2015_Tracto_challenge_ground_truth_dwi_v2/table_flipy.npy'
-  std_path : '/home/xqgao/data/ISMRM2015/ISMRM_2015_Tracto_challenge_ground_truth_dwi_v2/fodgt_std.npy'
-  mean_path : '/home/xqgao/data/ISMRM2015/ISMRM_2015_Tracto_challenge_ground_truth_dwi_v2/fodgt_mean.npy'
-  Y_path : '/home/xqgao/data/ISMRM2015/ISMRM_2015_Tracto_challenge_ground_truth_dwi_v2/Y.npy'
-  G_path : '/home/xqgao/data/ISMRM2015/ISMRM_2015_Tracto_challenge_ground_truth_dwi_v2/G.npy'
-  nside16sh8 : '/home/xqgao/data/ISMRM2015/ISMRM_2015_Tracto_challenge_ground_truth_dwi_v2/side16sh8.npy'
+  ROI_path: './data/CHCP/3025/ConnectomeAnalysis/MCP_Mask.nii.gz' 
+  dwi_path: './data/ISMRM2015/ISMRM_2015_Tracto_challenge_ground_truth_dwi_v2/dti_B0.nii.gz'
+  fod_path: './data/CHCP/FOD/3025/3025_GT_CSTR.nii.gz'
+  mask_path: './data/ISMRM2015/ISMRM_2015_Tracto_challenge_ground_truth_dwi_v2/mask.nii.gz'
+  Gradtable_path: './data/ISMRM2015/ISMRM_2015_Tracto_challenge_ground_truth_dwi_v2/table_flipy.npy'
+  std_path : './data/ISMRM2015/ISMRM_2015_Tracto_challenge_ground_truth_dwi_v2/fodgt_std.npy'
+  mean_path : './data/ISMRM2015/ISMRM_2015_Tracto_challenge_ground_truth_dwi_v2/fodgt_mean.npy'
+  Y_path : './data/ISMRM2015/ISMRM_2015_Tracto_challenge_ground_truth_dwi_v2/Y.npy'
+  G_path : './data/ISMRM2015/ISMRM_2015_Tracto_challenge_ground_truth_dwi_v2/G.npy'
+  nside16sh8 : './data/ISMRM2015/ISMRM_2015_Tracto_challenge_ground_truth_dwi_v2/side16sh8.npy'
   obj_path: 'data/sphere5120.obj'
   ConstraintSet_path: 'data/ConstraintSet.mat'

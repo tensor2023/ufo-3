@@ -15,7 +15,7 @@ torch.autograd.set_detect_anomaly(True)
 #from torch.utils.tensorboard import Summary#writer
 import pytorch_warmup as warmup
 DEVICE = 'cuda' #torch.DEVICE("cuda:0" if torch.cuda.is_available() else "cpu")
-sys.path.append('/home/xqgao/D/dwi2fod_e3so3unet/data')
+sys.path.append('./D/dwi2fod_e3so3unet/data')
 from data import create_dataset_val,create_dataset_train
 from data.chcp_dataset import pre_generator,matrixB
 
@@ -140,7 +140,7 @@ def main(batch_size, lr, n_epoch, kernel_sizeSph, kernel_sizeSpa,
     torch.save(model.state_dict(), os.path.join(save_path, 'epoch_0.pth'))
 
     #Constrain Set
-    coord,ConstraintSet,__build_class__,trg= pre_generator('/home/xqgao/D/xuedwi2fod_e3so3bigdata/',cfg['constrain_points'])
+    coord,ConstraintSet,__build_class__,trg= pre_generator('./D/xuedwi2fod_e3so3bigdata/',cfg['constrain_points'])
     BS=matrixB(coord, cfg['train_params']['max_order'])
     BC=torch.from_numpy(BS[ConstraintSet,:].transpose()).float().to(DEVICE)
 
@@ -154,8 +154,8 @@ def main(batch_size, lr, n_epoch, kernel_sizeSph, kernel_sizeSpa,
         prev_nf = cfg['train_params']['featrues_CHCP']
     if cfg['dataset_mode'] =='chcps':
         prev_nf = cfg['train_params']['featrues_CHCP']
-        train_list='/home/xqgao/D/dwi2fod_USL/data/3025.txt'
-        val_list='/home/xqgao/D/dwi2fod_USL/data/3025.txt'
+        train_list='./D/dwi2fod_USL/data/3025.txt'
+        val_list='./D/dwi2fod_USL/data/3025.txt'
     print('dataset_mode:',cfg['dataset_mode'])
     print('prev_nf:',prev_nf)
     print('train_list:',train_list)
@@ -475,7 +475,7 @@ def set_seed(seed):
 
 if __name__ == '__main__':
     
-    with open('/home/xqgao/D/xuedwi2fod_e3so3bigdata/train.yaml', 'r') as f:
+    with open('./D/xuedwi2fod_e3so3bigdata/train.yaml', 'r') as f:
         cfg = yaml.safe_load(f)
     
     middle_voxel = cfg['middle_voxel']
