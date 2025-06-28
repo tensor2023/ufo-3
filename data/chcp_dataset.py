@@ -27,7 +27,7 @@ def nullable_int(val):
 
 def flip_axis_to_match_HCP_space(data, affine):
     """
-    Checks if affine 仿射矩阵of the image has the same signs on the diagonal as HCP space. If this is not the case it will
+    Checks if affine of the image has the same signs on the diagonal as HCP space. If this is not the case it will
     invert the sign of the affine (not returned here) and invert the axis accordingly.
     If displayed in an medical image viewer the image will look the same, but the order by the data in the image
     array will be changed.
@@ -61,8 +61,6 @@ def load_txt(filename):
     """
     Loads a file in nii, nii.gz, mgz, npz, or npy format. If input file is not a string,
     returns it directly (allows files preloaded in memory to be passed to a generator)
-    加载nii、nii.gz、mgz、npz或npy格式的文件.如果输入文件不是字符串,
-    直接return（允许将预加载在内存中的文件传递给生成器）
 
     Parameters:
         filename: Filename to load, or preloaded volume to be returned.
@@ -435,12 +433,9 @@ class CHCPDataset(BaseDataset):
                                     fodgt_path=os.path.join(subject_id[3]),
                                     mean_path=os.path.join(subject_id[4]),
                                     std_path=os.path.join(subject_id[5]),
-                                    
                                     Y_path=os.path.join(subject_id[6]),
                                     G_path=os.path.join(subject_id[7]),
                                     n_path=os.path.join(subject_id[8]),
-                                    # dmean_path=os.path.join(subject_id[9]),
-                                    # dstd_path=os.path.join(subject_id[10]),
                                     subject_id=subject_id)
 
         else:
@@ -459,7 +454,6 @@ class CHCPDataset(BaseDataset):
                                     G_path=os.path.join(subject_id[7]),
                                     n_path=os.path.join(subject_id[8]),
                                     subject_id=subject_id)
-
 
     def add_fod_sample(self,prev,fod_id, fodlr_path,fodlr_path6, fsl_5ttgen_mask_path, table_path,fodgt_path,mean_path,
                                 std_path,Y_path,G_path,n_path,subject_id=None):
