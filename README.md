@@ -51,6 +51,7 @@ This repository contains the official PyTorch implementation of our MICCAI 2025 
 ├── test.yaml             # Test config
 ├── README.md             # You are here
 
+```
 
 ---
 ## ⚙️ Installation
